@@ -17,10 +17,17 @@ useEffect(()=>{
   fetchData('http://localhost:8080/meetups')  
 },[]);
 
-let homeMeet = allMeet;
-console.log(allMeet)
-// console.log(homeMeet)
-// .filter((el) => {}) // Filter on the basis of Users interests and location (both true)
+const CityClick = (e) => {
+//if not empty then add
+console.log(e.target.value,"rreree")
+function fetchData(url) { 
+  axios.get(url).then(res=>{setallMeet(res.data)})
+  }
+  fetchData(`http://localhost:8080/meetups?location=${e.target.value}`)
+}
+
+
+
 
   return (
     <div className="grid grid-cols-2 homeContainer">
@@ -51,7 +58,7 @@ console.log(allMeet)
         <div>
           <select
             value={"add your value here"}  // add value here
-            onChange={(e) => { }}
+            onChange={CityClick}
           >
             <option value="">------</option>
             <option value="bangalore">Bangalore</option>

@@ -1,12 +1,9 @@
-// import  from './components/'
-//See the Location ./components? Correctly
+import { Routers } from "./Components/Routers/Routers";
 
 function App() {
   return (
-    <div className='App'>
-    <h1 className='text-3xl ml-4 font-bold underline animate-bounce hover:bg-red-500'>
-      Hello world! Thanks for Using TailwindConfigure Package
-    </h1>
+    <div className="App">
+      <Routers />
     </div>
   );
 }

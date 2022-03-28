@@ -1,21 +1,21 @@
 import { createStore } from 'redux';
 
 const initData = {
-  products: [],
-  cart: [ ],
-  total: 0
+login:false,
+loginData:{}
 };
 
 const reducer = (state = initData, action) => {
 
-// if(action.type==''){
+if(action.type==='LOGIN'){
 
-// return{
-// ...state,
-// cart:[...state.cart,action.payload]
+return{
+login:true,
+loginData:action.payload.loginDatastore
 
-// }
-// }
+}
+}
+console.log(state, "state from store")
   return state;
 };
 
